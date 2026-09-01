@@ -10,7 +10,7 @@ final class FlagEvaluator
         if (! ($rule['enabled'] ?? false)) {
             return false;
         }
-        if (isset($rule['expires_at']) && new \DateTimeImmutable((string) $rule['expires_at']) <= new \DateTimeImmutable()) {
+        if (isset($rule['expires_at']) && new \DateTimeImmutable((string) $rule['expires_at']) <= new \DateTimeImmutable) {
             return false;
         }
         if (isset($rule['environments']) && ! in_array($environment, $rule['environments'], true)) {
